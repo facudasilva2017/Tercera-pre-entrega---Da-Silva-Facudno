@@ -1,0 +1,21 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Nuevo CLiente
+{% endblock titulo %}
+
+{% block cabecera %}
+    Agregado de nuevo cliente
+{% endblock cabecera %}
+
+{% block contenido %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock contenido %}

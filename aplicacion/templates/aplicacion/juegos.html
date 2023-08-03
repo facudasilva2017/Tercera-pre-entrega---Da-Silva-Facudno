@@ -1,0 +1,35 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Juegos
+{% endblock titulo %}
+    
+
+{% block cabecera %}
+    Lista de Juegos
+{% endblock cabecera %}
+    
+{% block contenido %}
+<table class="table">
+    <thead>
+       <tr>
+         <th>Nombre</th>
+         <th>Genero</th>
+         <th>Desarroladora</th>
+         <th>Precio</th>
+       </tr>  
+    </thead> 
+    <tbody>
+    {% for juego in juegos %}
+    <tr>
+        <td>{{ juego.nombre }}</td>
+        <td>{{ juego.genero }}</td>
+        <td>{{ juego.desarrolladora }}</td>
+        <td>{{ juego.precio }}</td>
+    </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

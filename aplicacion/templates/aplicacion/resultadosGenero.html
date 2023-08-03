@@ -1,0 +1,27 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block cabecera %}
+Juegos del genero {{ genero }}
+{% endblock cabecera %}
+
+{% block contenido %}
+    <table class="table">
+        <thead>
+           <tr>
+             <th>Juego</th>
+             <th>Desarrolladora</th>
+             <th>Precio</th>
+           </tr>  
+        </thead> 
+        <tbody>
+        {% for curso in cursos %}
+        <tr>
+            <td>{{ juego.nombre }}</td>
+            <td>{{ juego.desarrolladora }}</td>
+            <td>{{ juego.precio }}</td>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+{% endblock contenido %}

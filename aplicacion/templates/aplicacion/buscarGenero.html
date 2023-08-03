@@ -1,0 +1,20 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Genero de juego
+{% endblock titulo %}
+    
+
+{% block cabecera %}
+    Buscar por genero
+{% endblock cabecera %}
+    
+{% block contenido %}
+    <form action="/aplicacion/buscar" method="get">
+        {% csrf_token %}
+        <input type="text" name="genero" id="genero">
+        <input type="submit" value="Buscar">
+    </form>
+{% endblock contenido %}

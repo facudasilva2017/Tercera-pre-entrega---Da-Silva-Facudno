@@ -1,0 +1,33 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Consolas
+{% endblock titulo %}
+    
+
+{% block cabecera %}
+    Lista de Consolas
+{% endblock cabecera %}
+    
+{% block contenido %}
+<table class="table">
+    <thead>
+       <tr>
+         <th>Nombre</th>
+         <th>Compañia</th>
+         <th>Precio</th>
+       </tr>  
+    </thead> 
+    <tbody>
+    {% for consola in consolas %}
+    <tr>
+        <td>{{ consola.nombre }}</td>
+        <td>{{ consola.compania }}</td>
+        <td>{{ consola.precio }}</td>
+    </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}

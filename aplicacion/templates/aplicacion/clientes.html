@@ -1,0 +1,33 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Clientes
+{% endblock titulo %}
+    
+
+{% block cabecera %}
+    Lista de Clientes
+{% endblock cabecera %}
+    
+{% block contenido %}
+<table class="table">
+    <thead>
+       <tr>
+         <th>Apellido</th>
+         <th>Nombre</th>
+         <th>Email</th>
+       </tr>  
+    </thead> 
+    <tbody>
+    {% for cliente in clientes %}
+    <tr>
+        <td>{{ cliente.apellido }}</td>
+        <td>{{ cliente.nombre }}</td>
+        <td>{{ cliente.email }}</td>
+    </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock contenido %}
